@@ -36,7 +36,7 @@ class App extends Component {
           .then((result) => web3.utils.fromWei(result, "ether"));
         this.setState({ account: accounts[0], balance: balance, web3: web3 });
       } else {
-        window.alert("Please login with MetaMask");
+        window.alert("Login with MetaMask");
       }
 
       //load contracts
@@ -62,7 +62,7 @@ class App extends Component {
         window.alert("Contracts are not deployed to the current network");
       }
     } else {
-      window.alert("Please install MetaMask");
+      window.alert("Please install MetaMask to use this Web App");
     }
   }
 

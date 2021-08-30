@@ -3,7 +3,7 @@ const config = {
   gateway: 8080,
 };
 
-const node = {
+let node = {
   // remote node
   default: "remote",
   remote: {
@@ -13,11 +13,13 @@ const node = {
   },
 
   // local node
-  location: {
+  local: {
     host: "127.0.0.1",
     ...config,
     protocol: "http",
   },
 };
+
+export const setDefault = (val) => (node.default = val);
 
 export default node;

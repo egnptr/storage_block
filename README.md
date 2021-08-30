@@ -9,6 +9,7 @@ Storage Block is a decentralized file storing web application using IPFS and Eth
 Please make sure you meet the prerequisites:
 
 - [Node.js](https://nodejs.org/en/download/) installed.
+- [Metamask](https://metamask.io/download.html) for browser.
 - A personal Ethereum blockchain using [Ganache](https://www.trufflesuite.com/ganache) installed.
 
 ## Running
@@ -22,5 +23,6 @@ truffle migrate
 In the project directory, you can run the app in the development mode with :
 
 ```
+npm i
 npm run start
 ```
