@@ -65,7 +65,11 @@ class Upload extends Component {
                                 Attachments
                               </label>
                               {this.props.name == null && (
-                                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                <div
+                                  className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+                                  onDrop={this.props.fileReader}
+                                  onDragOver={this.props.dragOver}
+                                >
                                   <div className="space-y-1 text-center">
                                     <CloudUploadIcon className="mx-auto h-12 w-12 text-gray-400" />
                                     <div className="flex text-sm text-gray-600">
@@ -73,7 +77,9 @@ class Upload extends Component {
                                         htmlFor="file-upload"
                                         className="mx-auto relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                                       >
-                                        <span>Select a file</span>
+                                        <span className="px-1">
+                                          Select a file
+                                        </span>
                                         <input
                                           id="file-upload"
                                           name="file-upload"
@@ -83,8 +89,9 @@ class Upload extends Component {
                                           required
                                         />
                                       </label>
+                                      or drag it here
                                     </div>
-                                    <p className="p-3 text-xs text-gray-500">
+                                    <p className="text-xs text-gray-500">
                                       Any type of file is acceptable
                                     </p>
                                   </div>

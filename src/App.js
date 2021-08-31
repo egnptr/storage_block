@@ -138,8 +138,13 @@ class App extends Component {
   };
 
   handleFileSelect = (e) => {
+    e.stopPropagation();
     e.preventDefault();
-    const file = e.target.files[0];
+    if (e.dataTransfer != null) {
+      var file = e.dataTransfer.files[0];
+    } else {
+      file = e.target.files[0];
+    }
     const reader = new window.FileReader();
     reader.onloadend = () => {
       this.setState({
@@ -151,6 +156,11 @@ class App extends Component {
     };
     reader.readAsArrayBuffer(file);
   };
+
+  handleDragOver(e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
 
   handleClearFile = (e) => {
     e.preventDefault();
@@ -177,6 +187,7 @@ class App extends Component {
     this.handleUpdateFile = this.handleUpdateFile.bind(this);
     this.handleDeleteFile = this.handleDeleteFile.bind(this);
     this.handleFileSelect = this.handleFileSelect.bind(this);
+    this.handleDragOver = this.handleDragOver.bind(this);
     this.handleClearFile = this.handleClearFile.bind(this);
   }
 
@@ -196,6 +207,7 @@ class App extends Component {
               <Upload
                 clearFile={this.handleClearFile}
                 fileReader={this.handleFileSelect}
+                dragOver={this.handleDragOver}
                 uploadFile={this.handleUploadFile}
                 name={this.state.name}
                 result={this.state.result}
