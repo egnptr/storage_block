@@ -17,7 +17,7 @@ contract Storage {
 
     uint256 public totalFileCount = 0;
 
-    uint256 private fileIndex = 0;
+    uint256 public fileIndex = 0;
 
     event FileUploaded(
         uint256 fileId,
@@ -140,7 +140,7 @@ contract Storage {
         return files.length;
     }
 
-    function fileExist(uint256 _fileId) private view returns (bool success) {
+    function fileExist(uint256 _fileId) public view returns (bool success) {
         if (totalFileCount == 0) return false;
 
         for (uint256 i = 0; i < totalFileCount; i++) {

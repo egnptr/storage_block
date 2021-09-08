@@ -18,10 +18,10 @@ const ipfs = ipfsClient({
 
 class App extends Component {
   async componentDidMount() {
-    await this.loadMetamask(this.props.dispatch);
+    await this.loadMetamask();
   }
 
-  async loadMetamask(dispatch) {
+  async loadMetamask() {
     if (typeof window.ethereum !== "undefined") {
       const web3 = new Web3(window.ethereum);
       const netId = await web3.eth.net.getId();
@@ -140,21 +140,23 @@ class App extends Component {
   handleFileSelect = (e) => {
     e.stopPropagation();
     e.preventDefault();
+
     if (e.dataTransfer != null) {
-      var file = e.dataTransfer.files[0];
+      var files = e.dataTransfer.files[0];
     } else {
-      file = e.target.files[0];
+      files = e.target.files[0];
     }
+
     const reader = new window.FileReader();
     reader.onloadend = () => {
       this.setState({
         buffer: Buffer(reader.result),
-        type: file.type,
-        name: file.name,
+        type: files.type,
+        name: files.name,
       });
       console.log(this.state.name, this.state.buffer);
     };
-    reader.readAsArrayBuffer(file);
+    reader.readAsArrayBuffer(files);
   };
 
   handleDragOver(e) {
