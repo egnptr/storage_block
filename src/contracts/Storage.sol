@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.6.0 <0.9.0;
+pragma solidity 0.7.5;
 
 contract Storage {
     struct File {
@@ -50,7 +50,7 @@ contract Storage {
         string memory _fileType,
         string memory _fileName,
         string memory _fileDescription
-    ) public {
+    ) external {
         require(bytes(_fileHash).length > 0);
         require(bytes(_fileType).length > 0);
         require(bytes(_fileDescription).length > 0);
@@ -88,7 +88,7 @@ contract Storage {
     }
 
     function updateFile(uint256 _fileId, string memory _fileDescription)
-        public
+        external
         returns (bool success)
     {
         require(bytes(_fileDescription).length > 0);
@@ -116,7 +116,7 @@ contract Storage {
         return false;
     }
 
-    function deleteFile(uint256 _fileId) public returns (bool success) {
+    function deleteFile(uint256 _fileId) external returns (bool success) {
         require(msg.sender != address(0));
         if (!fileExist(_fileId)) revert("This file does not exist");
 
@@ -134,10 +134,6 @@ contract Storage {
         }
 
         return false;
-    }
-
-    function getFileCount() private view returns (uint256 count) {
-        return files.length;
     }
 
     function fileExist(uint256 _fileId) public view returns (bool success) {

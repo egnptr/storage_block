@@ -29,6 +29,38 @@ contract("Storage", ([deployer, uploader]) => {
     const fileDescription = "a description";
 
     before(async () => {
+      await storage.uploadFile(
+        fileHash,
+        fileSize,
+        fileType,
+        fileName,
+        fileDescription,
+        { from: uploader }
+      );
+      await storage.uploadFile(
+        fileHash,
+        fileSize,
+        fileType,
+        fileName,
+        fileDescription,
+        { from: uploader }
+      );
+      await storage.uploadFile(
+        fileHash,
+        fileSize,
+        fileType,
+        fileName,
+        fileDescription,
+        { from: uploader }
+      );
+      await storage.uploadFile(
+        fileHash,
+        fileSize,
+        fileType,
+        fileName,
+        fileDescription,
+        { from: uploader }
+      );
       result = await storage.uploadFile(
         fileHash,
         fileSize,
@@ -42,7 +74,7 @@ contract("Storage", ([deployer, uploader]) => {
 
     describe("Success", () => {
       it("Upload a file", async () => {
-        assert.equal(fileCount, 1);
+        assert.equal(fileCount, 5);
         const event = result.logs[0].args;
         assert.equal(
           event.fileId.toNumber(),
@@ -134,13 +166,15 @@ contract("Storage", ([deployer, uploader]) => {
   });
 
   describe("Editing a file", () => {
-    let edited, fileCount;
+    let edited;
     const fileName = "test.png";
     const fileDescription = "a description";
 
     before(async () => {
-      fileCount = await storage.totalFileCount();
-      edited = await storage.updateFile(fileCount, "a new description", {
+      await storage.updateFile(3, "a new description", {
+        from: uploader,
+      });
+      edited = await storage.updateFile(5, "a new description", {
         from: uploader,
       });
     });
@@ -149,11 +183,7 @@ contract("Storage", ([deployer, uploader]) => {
       it("Change description", async () => {
         const newEvent = edited.logs[0].args;
         assert.equal(newEvent.updater, uploader, "Updater is correct");
-        assert.equal(
-          newEvent.fileId.toNumber(),
-          fileCount.toNumber(),
-          "ID is correct"
-        );
+        assert.equal(newEvent.fileId.toNumber(), 5, "ID is correct");
         assert.equal(newEvent.fileName, fileName, "Name is correct");
         assert.notEqual(
           newEvent.fileDescription,
@@ -165,8 +195,7 @@ contract("Storage", ([deployer, uploader]) => {
 
     describe("Failure", () => {
       it("Only the owner can edit their own file", async () => {
-        await storage.updateFile(fileCount, "a new description").should.be
-          .rejected;
+        await storage.updateFile(5, "a new description").should.be.rejected;
       });
 
       it("To edit file must have ID", async () => {
@@ -175,40 +204,36 @@ contract("Storage", ([deployer, uploader]) => {
       });
 
       it("To edit file must have description", async () => {
-        await storage.updateFile(fileCount, "", { from: uploader }).should.be
-          .rejected;
+        await storage.updateFile(5, "", { from: uploader }).should.be.rejected;
       });
     });
   });
 
   describe("Deleting a file", () => {
-    let deleted, fileCount, fileIndex;
+    let deleted, fileCount;
 
     before(async () => {
+      await storage.deleteFile(2, { from: uploader });
+      deleted = await storage.deleteFile(3, { from: uploader });
       fileCount = await storage.totalFileCount();
-      deleted = await storage.deleteFile(fileCount, { from: uploader });
-      fileIndex = await storage.fileIndex();
     });
 
     describe("Success", () => {
       it("Delete file", async () => {
         const deleteEvent = deleted.logs[0].args;
         assert.equal(deleteEvent.deleter, uploader, "Deleter is correct");
-        assert.equal(
-          deleteEvent.fileId.toNumber(),
-          fileCount.toNumber(),
-          "ID is correct"
-        );
+        assert.equal(deleteEvent.fileId.toNumber(), 3, "ID is correct");
       });
 
-      it("Check total count", async () => {
-        assert.notEqual(fileIndex, fileCount);
+      it("Check if total count decreased", async () => {
+        assert.equal(fileCount, 3);
       });
 
-      it("Check file", async () => {
-        const deleteEvent = deleted.logs[0].args;
-        let fileExist = await storage.fileExist(deleteEvent.fileId);
-        assert.equal(fileExist, false, "File doesn't exist");
+      it("Check if file is deleted", async () => {
+        let fileExist1 = await storage.fileExist(2);
+        let fileExist2 = await storage.fileExist(3);
+        assert.equal(fileExist1, false, "File doesn't exist");
+        assert.equal(fileExist2, false, "File doesn't exist");
       });
     });
 
