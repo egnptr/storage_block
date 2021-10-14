@@ -45,7 +45,7 @@ class App extends Component {
           Storage.abi,
           Storage.networks[netId].address
         );
-        const filesCount = await storage.methods.totalFileCount().call();
+        const filesCount = await storage.methods.getTotalFile().call();
         this.setState({
           storage: storage,
           filesCount: filesCount,
