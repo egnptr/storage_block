@@ -69,7 +69,7 @@ contract("Storage", ([deployer, uploader]) => {
         fileDescription,
         { from: uploader }
       );
-      fileCount = await storage.getTotalFile();
+      fileCount = await storage.totalFileCount();
     });
 
     describe("Success", () => {
@@ -215,7 +215,7 @@ contract("Storage", ([deployer, uploader]) => {
     before(async () => {
       await storage.deleteFile(2, { from: uploader });
       deleted = await storage.deleteFile(3, { from: uploader });
-      fileCount = await storage.getTotalFile();
+      fileCount = await storage.totalFileCount();
     });
 
     describe("Success", () => {
