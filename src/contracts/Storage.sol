@@ -15,6 +15,8 @@ contract Storage {
 
     File[] public files;
 
+    uint256 public totalFileCount = 0;
+
     uint256 public fileIndex = 0;
 
     event FileUploaded(
@@ -71,6 +73,8 @@ contract Storage {
 
         files.push(newFile);
 
+        totalFileCount++;
+
         emit FileUploaded(
             fileIndex,
             _fileHash,
@@ -85,63 +89,59 @@ contract Storage {
 
     function updateFile(uint256 _fileId, string memory _fileDescription)
         external
+        returns (bool success)
     {
         require(bytes(_fileDescription).length > 0);
         require(msg.sender != address(0));
+        if (!fileExist(_fileId)) revert("This file does not exist");
 
-        uint256 i = findFile(_fileId);
+        for (uint256 i = 0; i < totalFileCount; i++) {
+            if (files[i].fileId == _fileId) {
+                if (files[i].uploader != msg.sender)
+                    revert("You can not update files that is not yours");
+                files[i].fileDescription = _fileDescription;
 
-        if (files[i].uploader != msg.sender)
-            revert("You can not update files that is not yours");
+                emit FileUpdated(
+                    _fileId,
+                    files[i].fileName,
+                    _fileDescription,
+                    block.timestamp,
+                    msg.sender
+                );
 
-        files[i].fileDescription = _fileDescription;
-
-        emit FileUpdated(
-            _fileId,
-            files[i].fileName,
-            _fileDescription,
-            block.timestamp,
-            msg.sender
-        );
+                return true;
+            }
+        }
+        return false;
     }
 
-    function deleteFile(uint256 _fileId) external {
+    function deleteFile(uint256 _fileId) external returns (bool success) {
         require(msg.sender != address(0));
+        if (!fileExist(_fileId)) revert("This file does not exist");
 
-        uint256 i = findFile(_fileId);
-        uint256 totalFileCount = files.length;
-
-        if (files[i].uploader != msg.sender)
-            revert("You can not delete files that is not yours");
-
-        files[i] = files[totalFileCount - 1];
-        delete files[totalFileCount - 1];
-        files.pop();
-
-        emit FileDeleted(_fileId, block.timestamp, msg.sender);
+        for (uint256 i = 0; i < totalFileCount; i++) {
+            if (files[i].fileId == _fileId) {
+                if (files[i].uploader != msg.sender)
+                    revert("You can not delete files that is not yours");
+                files[i] = files[totalFileCount - 1];
+                delete files[totalFileCount - 1];
+                totalFileCount--;
+                files.pop();
+                emit FileDeleted(_fileId, block.timestamp, msg.sender);
+                return true;
+            }
+        }
+        return false;
     }
 
-    function getTotalFile() external view returns (uint256 length) {
-        return files.length;
-    }
+    function fileExist(uint256 _fileId) public view returns (bool success) {
+        if (totalFileCount == 0) return false;
 
-    function fileExist(uint256 _fileId) external view returns (bool success) {
-        for (uint256 i = 0; i < files.length; i++) {
+        for (uint256 i = 0; i < totalFileCount; i++) {
             if (files[i].fileId == _fileId) {
                 return true;
             }
         }
-
         return false;
-    }
-
-    function findFile(uint256 _fileId) internal view returns (uint256) {
-        for (uint256 i = 0; i < files.length; i++) {
-            if (files[i].fileId == _fileId) {
-                return i;
-            }
-        }
-
-        revert("This file does not exist");
     }
 }
