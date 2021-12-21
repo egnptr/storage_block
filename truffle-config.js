@@ -52,7 +52,7 @@ module.exports = {
         );
       },
       gas: 5000000,
-      gasPrice: 5000000000, // 5 gwei
+      gasPrice: 15000000000, // 15 gwei
       network_id: 3,
       networkCheckTimeout: 100000,
     },
