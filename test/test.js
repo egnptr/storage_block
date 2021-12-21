@@ -22,51 +22,31 @@ contract("Storage", ([deployer, uploader]) => {
 
   describe("Storing a file", async () => {
     let result, fileCount;
-    const fileHash = "QmV8cfu6n4NT5xRr2AHdKxFMTZEJrA44qgrBCr739BN9Wb";
-    const fileSize = "999";
-    const fileType = "img/png";
-    const fileName = "test.png";
-    const fileDescription = "a description";
+    const ipfsHash = "QmV8cfu6n4NT5xRr2AHdKxFMTZEJrA44qgrBCr739BN9Wb";
+    const size = "999";
+    const tipe = "img/png";
+    const name = "test.png";
+    const description = "a description";
 
     before(async () => {
-      await storage.uploadFile(
-        fileHash,
-        fileSize,
-        fileType,
-        fileName,
-        fileDescription,
-        { from: uploader }
-      );
-      await storage.uploadFile(
-        fileHash,
-        fileSize,
-        fileType,
-        fileName,
-        fileDescription,
-        { from: uploader }
-      );
-      await storage.uploadFile(
-        fileHash,
-        fileSize,
-        fileType,
-        fileName,
-        fileDescription,
-        { from: uploader }
-      );
-      await storage.uploadFile(
-        fileHash,
-        fileSize,
-        fileType,
-        fileName,
-        fileDescription,
-        { from: uploader }
-      );
+      await storage.uploadFile(ipfsHash, size, tipe, name, description, {
+        from: uploader,
+      });
+      await storage.uploadFile(ipfsHash, size, tipe, name, description, {
+        from: uploader,
+      });
+      await storage.uploadFile(ipfsHash, size, tipe, name, description, {
+        from: uploader,
+      });
+      await storage.uploadFile(ipfsHash, size, tipe, name, description, {
+        from: uploader,
+      });
       result = await storage.uploadFile(
-        fileHash,
-        fileSize,
-        fileType,
-        fileName,
-        fileDescription,
+        ipfsHash,
+        size,
+        tipe,
+        name,
+        description,
         { from: uploader }
       );
       fileCount = await storage.getTotalFile();
@@ -77,17 +57,17 @@ contract("Storage", ([deployer, uploader]) => {
         assert.equal(fileCount, 5, "File Count doesn't match");
         const event = result.logs[0].args;
         assert.equal(
-          event.fileId.toNumber(),
+          event.id.toNumber(),
           fileCount.toNumber(),
           "ID is different"
         );
-        assert.equal(event.fileHash, fileHash, "Hash is different");
-        assert.equal(event.fileSize, fileSize, "Size is different");
-        assert.equal(event.fileType, fileType, "Type is different");
-        assert.equal(event.fileName, fileName, "Name is different");
+        assert.equal(event.ipfsHash, ipfsHash, "Hash is different");
+        assert.equal(event.size, size, "Size is different");
+        assert.equal(event.tipe, tipe, "Type is different");
+        assert.equal(event.name, name, "Name is different");
         assert.equal(
-          event.fileDescription,
-          fileDescription,
+          event.description,
+          description,
           "Description is different"
         );
         assert.equal(event.uploader, uploader, "Uploader is different");
@@ -96,69 +76,45 @@ contract("Storage", ([deployer, uploader]) => {
       it("Get uploaded file", async () => {
         const file = await storage.files(fileCount - 1);
         assert.equal(
-          file.fileId.toNumber(),
+          file.id.toNumber(),
           fileCount.toNumber(),
           "ID is different"
         );
-        assert.equal(file.fileHash, fileHash, "Hash is different");
-        assert.equal(file.fileSize, fileSize, "Size is different");
-        assert.equal(file.fileName, fileName, "Name is different");
-        assert.equal(
-          file.fileDescription,
-          fileDescription,
-          "Description is different"
-        );
+        assert.equal(file.ipfsHash, ipfsHash, "Hash is different");
+        assert.equal(file.size, size, "Size is different");
+        assert.equal(file.name, name, "Name is different");
+        assert.equal(file.description, description, "Description is different");
         assert.equal(file.uploader, uploader, "Uploader is different");
       });
     });
 
     describe("Failure", () => {
       it("File must have hash", async () => {
-        await storage.uploadFile(
-          "",
-          fileSize,
-          fileType,
-          fileName,
-          fileDescription,
-          { from: uploader }
-        ).should.be.rejected;
+        await storage.uploadFile("", size, tipe, name, description, {
+          from: uploader,
+        }).should.be.rejected;
       });
 
       it("File must have size", async () => {
-        await storage.uploadFile(
-          fileHash,
-          "",
-          fileType,
-          fileName,
-          fileDescription,
-          { from: uploader }
-        ).should.be.rejected;
+        await storage.uploadFile(ipfsHash, "", tipe, name, description, {
+          from: uploader,
+        }).should.be.rejected;
       });
 
       it("File must have type", async () => {
-        await storage.uploadFile(
-          fileHash,
-          fileSize,
-          "",
-          fileName,
-          fileDescription,
-          { from: uploader }
-        ).should.be.rejected;
+        await storage.uploadFile(ipfsHash, size, "", name, description, {
+          from: uploader,
+        }).should.be.rejected;
       });
 
       it("File must have name", async () => {
-        await storage.uploadFile(
-          fileHash,
-          fileSize,
-          fileType,
-          "",
-          fileDescription,
-          { from: uploader }
-        ).should.be.rejected;
+        await storage.uploadFile(ipfsHash, size, tipe, "", description, {
+          from: uploader,
+        }).should.be.rejected;
       });
 
       it("File must have description", async () => {
-        await storage.uploadFile(fileHash, fileSize, fileType, fileName, "", {
+        await storage.uploadFile(ipfsHash, size, tipe, name, "", {
           from: uploader,
         }).should.be.rejected;
       });
@@ -167,8 +123,8 @@ contract("Storage", ([deployer, uploader]) => {
 
   describe("Editing a file", () => {
     let edited;
-    const fileName = "test.png";
-    const fileDescription = "a description";
+    const name = "test.png";
+    const description = "a description";
 
     before(async () => {
       await storage.updateFile(3, "a new description", {
@@ -183,11 +139,11 @@ contract("Storage", ([deployer, uploader]) => {
       it("Change description", async () => {
         const newEvent = edited.logs[0].args;
         assert.equal(newEvent.updater, uploader, "Updater is different");
-        assert.equal(newEvent.fileId.toNumber(), 5, "ID is different");
-        assert.equal(newEvent.fileName, fileName, "Name is different");
+        assert.equal(newEvent.id.toNumber(), 5, "ID is different");
+        assert.equal(newEvent.name, name, "Name is different");
         assert.notEqual(
-          newEvent.fileDescription,
-          fileDescription,
+          newEvent.description,
+          description,
           "Description is changed"
         );
       });
@@ -222,7 +178,7 @@ contract("Storage", ([deployer, uploader]) => {
       it("Delete file", async () => {
         const deleteEvent = deleted.logs[0].args;
         assert.equal(deleteEvent.deleter, uploader, "Deleter is different");
-        assert.equal(deleteEvent.fileId.toNumber(), 3, "ID is different");
+        assert.equal(deleteEvent.id.toNumber(), 3, "ID is different");
       });
 
       it("Check if total count decreased", async () => {

@@ -29,17 +29,15 @@ class App extends Component {
         method: "eth_requestAccounts",
       });
 
-      //load balance
       if (typeof accounts[0] !== "undefined") {
         const balance = await web3.eth
           .getBalance(accounts[0])
-          .then((result) => web3.utils.fromWei(result, "ether"));
+          .then((output) => web3.utils.fromWei(output, "ether"));
         this.setState({ account: accounts[0], balance: balance, web3: web3 });
       } else {
         window.alert("Login with MetaMask");
       }
 
-      //load contracts
       try {
         const storage = new web3.eth.Contract(
           Storage.abi,
@@ -50,7 +48,7 @@ class App extends Component {
           storage: storage,
           filesCount: filesCount,
         });
-        // Sort by the newest
+
         for (var i = filesCount - 1; i >= 0; i--) {
           const file = await storage.methods.files(i).call();
           this.setState({
@@ -68,21 +66,21 @@ class App extends Component {
 
   handleUploadFile = (description) => {
     console.log("Submitting file to IPFS...");
-    this.setState({ loading: true });
-    ipfs.add(this.state.buffer, (error, result) => {
-      console.log("Result : ", result);
-      this.setState({ result: result[0] });
+    this.setState({ isLoading: true });
+    ipfs.add(this.state.buffer, (error, output) => {
       if (error) {
         console.error(error);
         return;
       }
+      console.log("Output : ", output);
+      this.setState({ output: output[0] });
       if (this.state.type === "") {
         this.setState({ type: "none" });
       }
       this.state.storage.methods
         .uploadFile(
-          result[0].hash,
-          result[0].size,
+          output[0].hash,
+          output[0].size,
           this.state.type,
           this.state.name,
           description
@@ -90,7 +88,7 @@ class App extends Component {
         .send({ from: this.state.account })
         .on("transactionHash", (hash) => {
           this.setState({
-            loading: false,
+            isLoading: false,
             type: null,
             name: null,
           });
@@ -98,7 +96,7 @@ class App extends Component {
         })
         .on("error", (err) => {
           window.alert(JSON.stringify(err.message));
-          this.setState({ loading: false });
+          this.setState({ isLoading: false });
         });
     });
   };
@@ -106,34 +104,34 @@ class App extends Component {
   handleUpdateFile = (e, fileId, description) => {
     e.preventDefault();
     console.log("Updating file...");
-    this.setState({ loading: true });
+    this.setState({ isLoading: true });
     this.state.storage.methods
       .updateFile(fileId, description)
       .send({ from: this.state.account })
       .on("transactionHash", (hash) => {
-        this.setState({ loading: false });
+        this.setState({ isLoading: false });
         window.location.reload();
       })
       .on("error", (err) => {
         window.alert(JSON.stringify(err.message));
-        this.setState({ loading: false });
+        this.setState({ isLoading: false });
       });
   };
 
   handleDeleteFile = (fileId, e) => {
     e.preventDefault();
     console.log("Deleting file...");
-    this.setState({ loading: true });
+    this.setState({ isLoading: true });
     this.state.storage.methods
       .deleteFile(fileId)
       .send({ from: this.state.account })
       .on("transactionHash", (hash) => {
-        this.setState({ loading: false });
+        this.setState({ isLoading: false });
         window.location.reload();
       })
       .on("error", (err) => {
         window.alert(JSON.stringify(err.message));
-        this.setState({ loading: false });
+        this.setState({ isLoading: false });
       });
   };
 
@@ -142,21 +140,21 @@ class App extends Component {
     e.preventDefault();
 
     if (e.dataTransfer != null) {
-      var files = e.dataTransfer.files[0];
+      var file = e.dataTransfer.files[0];
     } else {
-      files = e.target.files[0];
+      file = e.target.files[0];
     }
 
-    const reader = new window.FileReader();
+    let reader = new FileReader();
+    reader.readAsArrayBuffer(file);
     reader.onloadend = () => {
       this.setState({
         buffer: Buffer(reader.result),
-        type: files.type,
-        name: files.name,
+        type: file.type,
+        name: file.name,
       });
       console.log(this.state.name, this.state.buffer);
     };
-    reader.readAsArrayBuffer(files);
   };
 
   handleDragOver(e) {
@@ -180,8 +178,8 @@ class App extends Component {
       storage: null,
       balance: 0,
       files: [],
-      loading: false,
-      result: null,
+      isLoading: false,
+      output: null,
       type: null,
       name: null,
     };
@@ -212,8 +210,8 @@ class App extends Component {
                 dragOver={this.handleDragOver}
                 uploadFile={this.handleUploadFile}
                 name={this.state.name}
-                result={this.state.result}
-                loading={this.state.loading}
+                output={this.state.output}
+                isLoading={this.state.isLoading}
               />
             </Route>
             <Route exact path="/files">
@@ -222,7 +220,7 @@ class App extends Component {
                 deleteFile={this.handleDeleteFile}
                 account={this.state.account}
                 files={this.state.files}
-                loading={this.state.loading}
+                isLoading={this.state.isLoading}
               />
             </Route>
             <Route exact path="/settings">

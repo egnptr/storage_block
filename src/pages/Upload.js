@@ -9,7 +9,7 @@ import ReactLoading from "react-loading";
 
 class Upload extends Component {
   render() {
-    const ipfsResult = JSON.stringify(this.props.result, null, 4);
+    const ipfsResult = JSON.stringify(this.props.output, null, 4);
 
     return (
       <>
@@ -118,7 +118,7 @@ class Upload extends Component {
                             </div>
                             <div className="mt-3 text-center pb-3">
                               {" "}
-                              {this.props.loading === false ? (
+                              {this.props.isLoading === false ? (
                                 <Button
                                   color="purple"
                                   rounded
@@ -151,7 +151,7 @@ class Upload extends Component {
                   outline={true}
                   placeholder="IPFS API Response:"
                   disabled
-                  value={this.props.result != null ? ipfsResult : ""}
+                  value={this.props.output != null ? ipfsResult : ""}
                 />
               </div>
             </div>
