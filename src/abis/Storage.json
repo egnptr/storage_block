@@ -129,8 +129,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -184,8 +183,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -198,8 +196,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -294,8 +291,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.5+commit.eb77ed08\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fileId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"deleteTime\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deleter\",\"type\":\"address\"}],\"name\":\"FileDeleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fileId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileDescription\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"updatedTime\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"updater\",\"type\":\"address\"}],\"name\":\"FileUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fileId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileHash\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fileSize\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileType\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"fileDescription\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uploadTime\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"uploader\",\"type\":\"address\"}],\"name\":\"FileUploaded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fileId\",\"type\":\"uint256\"}],\"name\":\"deleteFile\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fileId\",\"type\":\"uint256\"}],\"name\":\"fileExist\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fileIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"files\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fileId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"fileHash\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"fileSize\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"fileType\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"fileName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"fileDescription\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"uploadTime\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"uploader\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalFileCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_fileId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_fileDescription\",\"type\":\"string\"}],\"name\":\"updateFile\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_fileHash\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_fileSize\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_fileType\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_fileName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_fileDescription\",\"type\":\"string\"}],\"name\":\"uploadFile\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/Eugene/Documents/Dev/web/storage_block/src/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Eugene/Documents/Dev/web/storage_block/src/contracts/Storage.sol\":{\"keccak256\":\"0x2e7d440ee5a5bf5d2fd15e6c588212567c0047d10fb7c5ba121383ba18482e41\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a8e745117ea96b039505a7352489ab9f7fd3a624fef9e9aee9f9468528d613be\",\"dweb:/ipfs/QmXLSbL14MgLDaUE7KfHK6tWuWDhKrTydzQJyzPguP1rB8\"]}},\"version\":1}",
@@ -311,9 +307,7 @@
   "ast": {
     "absolutePath": "/Users/Eugene/Documents/Dev/web/storage_block/src/contracts/Storage.sol",
     "exportedSymbols": {
-      "Storage": [
-        405
-      ]
+      "Storage": [405]
     },
     "id": 406,
     "license": "GPL-3.0",
@@ -321,11 +315,7 @@
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "0.7",
-          ".5"
-        ],
+        "literals": ["solidity", "0.7", ".5"],
         "nodeType": "PragmaDirective",
         "src": "36:22:0"
       },
@@ -336,9 +326,7 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 405,
-        "linearizedBaseContracts": [
-          405
-        ],
+        "linearizedBaseContracts": [405],
         "name": "Storage",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1286,10 +1274,7 @@
                       "id": 78,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1169:7:0",
                       "typeDescriptions": {
@@ -1434,10 +1419,7 @@
                       "id": 88,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1215:7:0",
                       "typeDescriptions": {
@@ -1582,10 +1564,7 @@
                       "id": 98,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1261:7:0",
                       "typeDescriptions": {
@@ -1730,10 +1709,7 @@
                       "id": 108,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1314:7:0",
                       "typeDescriptions": {
@@ -1878,10 +1854,7 @@
                       "id": 118,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1360:7:0",
                       "typeDescriptions": {
@@ -1968,10 +1941,7 @@
                       "id": 128,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "1403:7:0",
                       "typeDescriptions": {
@@ -2031,9 +2001,7 @@
                   "src": "1436:11:0"
                 },
                 {
-                  "assignments": [
-                    138
-                  ],
+                  "assignments": [138],
                   "declarations": [
                     {
                       "constant": false,
@@ -2829,10 +2797,7 @@
                       "id": 184,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2129:7:0",
                       "typeDescriptions": {
@@ -2977,10 +2942,7 @@
                       "id": 194,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2182:7:0",
                       "typeDescriptions": {
@@ -3104,10 +3066,7 @@
                         "id": 208,
                         "name": "revert",
                         "nodeType": "Identifier",
-                        "overloadedDeclarations": [
-                          -19,
-                          -19
-                        ],
+                        "overloadedDeclarations": [-19, -19],
                         "referencedDeclaration": -19,
                         "src": "2250:6:0",
                         "typeDescriptions": {
@@ -3362,10 +3321,7 @@
                                     "id": 236,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      -19,
-                                      -19
-                                    ],
+                                    "overloadedDeclarations": [-19, -19],
                                     "referencedDeclaration": -19,
                                     "src": "2461:6:0",
                                     "typeDescriptions": {
@@ -3732,9 +3688,7 @@
                   },
                   "id": 266,
                   "initializationExpression": {
-                    "assignments": [
-                      214
-                    ],
+                    "assignments": [214],
                     "declarations": [
                       {
                         "constant": false,
@@ -4071,10 +4025,7 @@
                       "id": 277,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
+                      "overloadedDeclarations": [-18, -18],
                       "referencedDeclaration": -18,
                       "src": "2970:7:0",
                       "typeDescriptions": {
@@ -4198,10 +4149,7 @@
                         "id": 291,
                         "name": "revert",
                         "nodeType": "Identifier",
-                        "overloadedDeclarations": [
-                          -19,
-                          -19
-                        ],
+                        "overloadedDeclarations": [-19, -19],
                         "referencedDeclaration": -19,
                         "src": "3038:6:0",
                         "typeDescriptions": {
@@ -4456,10 +4404,7 @@
                                     "id": 319,
                                     "name": "revert",
                                     "nodeType": "Identifier",
-                                    "overloadedDeclarations": [
-                                      -19,
-                                      -19
-                                    ],
+                                    "overloadedDeclarations": [-19, -19],
                                     "referencedDeclaration": -19,
                                     "src": "3249:6:0",
                                     "typeDescriptions": {
@@ -4970,9 +4915,7 @@
                   },
                   "id": 362,
                   "initializationExpression": {
-                    "assignments": [
-                      297
-                    ],
+                    "assignments": [297],
                     "declarations": [
                       {
                         "constant": false,
@@ -5406,9 +5349,7 @@
                   },
                   "id": 400,
                   "initializationExpression": {
-                    "assignments": [
-                      380
-                    ],
+                    "assignments": [380],
                     "declarations": [
                       {
                         "constant": false,
@@ -5606,20 +5547,14 @@
     "attributes": {
       "absolutePath": "/Users/Eugene/Documents/Dev/web/storage_block/src/contracts/Storage.sol",
       "exportedSymbols": {
-        "Storage": [
-          405
-        ]
+        "Storage": [405]
       },
       "license": "GPL-3.0"
     },
     "children": [
       {
         "attributes": {
-          "literals": [
-            "solidity",
-            "0.7",
-            ".5"
-          ]
+          "literals": ["solidity", "0.7", ".5"]
         },
         "id": 1,
         "name": "PragmaDirective",
@@ -5628,17 +5563,11 @@
       {
         "attributes": {
           "abstract": false,
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
+          "baseContracts": [null],
+          "contractDependencies": [null],
           "contractKind": "contract",
           "fullyImplemented": true,
-          "linearizedBaseContracts": [
-            405
-          ],
+          "linearizedBaseContracts": [405],
           "name": "Storage",
           "scope": 406
         },
@@ -6482,9 +6411,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "uploadFile",
               "scope": 405,
               "stateMutability": "nonpayable",
@@ -6631,9 +6558,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 77,
@@ -6651,9 +6576,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -6667,10 +6590,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -6710,9 +6630,7 @@
                                       "isPure": false,
                                       "isStructConstructorCall": false,
                                       "lValueRequested": false,
-                                      "names": [
-                                        null
-                                      ],
+                                      "names": [null],
                                       "tryCall": false,
                                       "type": "bytes memory",
                                       "type_conversion": true
@@ -6748,9 +6666,7 @@
                                       },
                                       {
                                         "attributes": {
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 67,
                                           "type": "string memory",
                                           "value": "_fileHash"
@@ -6808,9 +6724,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -6824,10 +6738,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -6867,9 +6778,7 @@
                                       "isPure": false,
                                       "isStructConstructorCall": false,
                                       "lValueRequested": false,
-                                      "names": [
-                                        null
-                                      ],
+                                      "names": [null],
                                       "tryCall": false,
                                       "type": "bytes memory",
                                       "type_conversion": true
@@ -6905,9 +6814,7 @@
                                       },
                                       {
                                         "attributes": {
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 71,
                                           "type": "string memory",
                                           "value": "_fileType"
@@ -6965,9 +6872,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -6981,10 +6886,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -7024,9 +6926,7 @@
                                       "isPure": false,
                                       "isStructConstructorCall": false,
                                       "lValueRequested": false,
-                                      "names": [
-                                        null
-                                      ],
+                                      "names": [null],
                                       "tryCall": false,
                                       "type": "bytes memory",
                                       "type_conversion": true
@@ -7062,9 +6962,7 @@
                                       },
                                       {
                                         "attributes": {
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 75,
                                           "type": "string memory",
                                           "value": "_fileDescription"
@@ -7122,9 +7020,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -7138,10 +7034,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -7181,9 +7074,7 @@
                                       "isPure": false,
                                       "isStructConstructorCall": false,
                                       "lValueRequested": false,
-                                      "names": [
-                                        null
-                                      ],
+                                      "names": [null],
                                       "tryCall": false,
                                       "type": "bytes memory",
                                       "type_conversion": true
@@ -7219,9 +7110,7 @@
                                       },
                                       {
                                         "attributes": {
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 73,
                                           "type": "string memory",
                                           "value": "_fileName"
@@ -7279,9 +7168,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -7295,10 +7182,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -7333,9 +7217,7 @@
                                 "children": [
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": -15,
                                       "type": "msg",
                                       "value": "msg"
@@ -7356,9 +7238,7 @@
                                   "isPure": true,
                                   "isStructConstructorCall": false,
                                   "lValueRequested": false,
-                                  "names": [
-                                    null
-                                  ],
+                                  "names": [null],
                                   "tryCall": false,
                                   "type": "address payable",
                                   "type_conversion": true
@@ -7436,9 +7316,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -7452,10 +7330,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -7480,9 +7355,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 69,
                                   "type": "uint256",
                                   "value": "_fileSize"
@@ -7536,9 +7409,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 27,
                               "type": "uint256",
                               "value": "fileIndex"
@@ -7559,9 +7430,7 @@
                   },
                   {
                     "attributes": {
-                      "assignments": [
-                        138
-                      ]
+                      "assignments": [138]
                     },
                     "children": [
                       {
@@ -7598,9 +7467,7 @@
                           "isPure": false,
                           "isStructConstructorCall": true,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "struct Storage.File memory",
                           "type_conversion": false
@@ -7642,9 +7509,7 @@
                                   "typeString": "address payable"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 18,
                               "type": "type(struct Storage.File storage pointer)",
                               "value": "File"
@@ -7655,9 +7520,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 27,
                               "type": "uint256",
                               "value": "fileIndex"
@@ -7668,9 +7531,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 67,
                               "type": "string memory",
                               "value": "_fileHash"
@@ -7681,9 +7542,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 69,
                               "type": "uint256",
                               "value": "_fileSize"
@@ -7694,9 +7553,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 71,
                               "type": "string memory",
                               "value": "_fileType"
@@ -7707,9 +7564,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 73,
                               "type": "string memory",
                               "value": "_fileName"
@@ -7720,9 +7575,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 75,
                               "type": "string memory",
                               "value": "_fileDescription"
@@ -7743,9 +7596,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": -4,
                                   "type": "block",
                                   "value": "block"
@@ -7771,9 +7622,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": -15,
                                   "type": "msg",
                                   "value": "msg"
@@ -7806,9 +7655,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -7832,9 +7679,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 21,
                                   "type": "struct Storage.File storage ref[] storage ref",
                                   "value": "files"
@@ -7850,9 +7695,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 138,
                               "type": "struct Storage.File memory",
                               "value": "newFile"
@@ -7886,9 +7729,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 24,
                               "type": "uint256",
                               "value": "totalFileCount"
@@ -7916,9 +7757,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -7960,9 +7799,7 @@
                                   "typeString": "address payable"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 45,
                               "type": "function (uint256,string memory,uint256,string memory,string memory,string memory,uint256,address)",
                               "value": "FileUploaded"
@@ -7973,9 +7810,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 27,
                               "type": "uint256",
                               "value": "fileIndex"
@@ -7986,9 +7821,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 67,
                               "type": "string memory",
                               "value": "_fileHash"
@@ -7999,9 +7832,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 69,
                               "type": "uint256",
                               "value": "_fileSize"
@@ -8012,9 +7843,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 71,
                               "type": "string memory",
                               "value": "_fileType"
@@ -8025,9 +7854,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 73,
                               "type": "string memory",
                               "value": "_fileName"
@@ -8038,9 +7865,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 75,
                               "type": "string memory",
                               "value": "_fileDescription"
@@ -8061,9 +7886,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": -4,
                                   "type": "block",
                                   "value": "block"
@@ -8089,9 +7912,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": -15,
                                   "type": "msg",
                                   "value": "msg"
@@ -8131,9 +7952,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "updateFile",
               "scope": 405,
               "stateMutability": "nonpayable",
@@ -8244,9 +8063,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -8260,10 +8077,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -8303,9 +8117,7 @@
                                       "isPure": false,
                                       "isStructConstructorCall": false,
                                       "lValueRequested": false,
-                                      "names": [
-                                        null
-                                      ],
+                                      "names": [null],
                                       "tryCall": false,
                                       "type": "bytes memory",
                                       "type_conversion": true
@@ -8341,9 +8153,7 @@
                                       },
                                       {
                                         "attributes": {
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
+                                          "overloadedDeclarations": [null],
                                           "referencedDeclaration": 179,
                                           "type": "string memory",
                                           "value": "_fileDescription"
@@ -8401,9 +8211,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -8417,10 +8225,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -8455,9 +8260,7 @@
                                 "children": [
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": -15,
                                       "type": "msg",
                                       "value": "msg"
@@ -8478,9 +8281,7 @@
                                   "isPure": true,
                                   "isStructConstructorCall": false,
                                   "lValueRequested": false,
-                                  "names": [
-                                    null
-                                  ],
+                                  "names": [null],
                                   "tryCall": false,
                                   "type": "address payable",
                                   "type_conversion": true
@@ -8570,9 +8371,7 @@
                               "isPure": false,
                               "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
+                              "names": [null],
                               "tryCall": false,
                               "type": "bool",
                               "type_conversion": false
@@ -8586,9 +8385,7 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 404,
                                   "type": "function (uint256) view returns (bool)",
                                   "value": "fileExist"
@@ -8599,9 +8396,7 @@
                               },
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 177,
                                   "type": "uint256",
                                   "value": "_fileId"
@@ -8629,9 +8424,7 @@
                               "isPure": false,
                               "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
+                              "names": [null],
                               "tryCall": false,
                               "type": "tuple()",
                               "type_conversion": false
@@ -8645,10 +8438,7 @@
                                       "typeString": "literal_string \"This file does not exist\""
                                     }
                                   ],
-                                  "overloadedDeclarations": [
-                                    -19,
-                                    -19
-                                  ],
+                                  "overloadedDeclarations": [-19, -19],
                                   "referencedDeclaration": -19,
                                   "type": "function (string memory) pure",
                                   "value": "revert"
@@ -8691,9 +8481,7 @@
                     "children": [
                       {
                         "attributes": {
-                          "assignments": [
-                            214
-                          ]
+                          "assignments": [214]
                         },
                         "children": [
                           {
@@ -8758,9 +8546,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 214,
                               "type": "uint256",
                               "value": "i"
@@ -8771,9 +8557,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 24,
                               "type": "uint256",
                               "value": "totalFileCount"
@@ -8802,9 +8586,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 214,
                                   "type": "uint256",
                                   "value": "i"
@@ -8864,9 +8646,7 @@
                                         "children": [
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 21,
                                               "type": "struct Storage.File storage ref[] storage ref",
                                               "value": "files"
@@ -8877,9 +8657,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 214,
                                               "type": "uint256",
                                               "value": "i"
@@ -8900,9 +8678,7 @@
                                   },
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 177,
                                       "type": "uint256",
                                       "value": "_fileId"
@@ -9033,9 +8809,7 @@
                                               "isPure": false,
                                               "isStructConstructorCall": false,
                                               "lValueRequested": false,
-                                              "names": [
-                                                null
-                                              ],
+                                              "names": [null],
                                               "tryCall": false,
                                               "type": "tuple()",
                                               "type_conversion": false
@@ -9050,8 +8824,7 @@
                                                     }
                                                   ],
                                                   "overloadedDeclarations": [
-                                                    -19,
-                                                    -19
+                                                    -19, -19
                                                   ],
                                                   "referencedDeclaration": -19,
                                                   "type": "function (string memory) pure",
@@ -9161,9 +8934,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 179,
                                               "type": "string memory",
                                               "value": "_fileDescription"
@@ -9191,9 +8962,7 @@
                                           "isPure": false,
                                           "isStructConstructorCall": false,
                                           "lValueRequested": false,
-                                          "names": [
-                                            null
-                                          ],
+                                          "names": [null],
                                           "tryCall": false,
                                           "type": "tuple()",
                                           "type_conversion": false
@@ -9223,9 +8992,7 @@
                                                   "typeString": "address payable"
                                                 }
                                               ],
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 65,
                                               "type": "function (uint256,string memory,string memory,uint256,address)",
                                               "value": "FileUpdated"
@@ -9236,9 +9003,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 177,
                                               "type": "uint256",
                                               "value": "_fileId"
@@ -9305,9 +9070,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 179,
                                               "type": "string memory",
                                               "value": "_fileDescription"
@@ -9468,9 +9231,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "deleteFile",
               "scope": 405,
               "stateMutability": "nonpayable",
@@ -9555,9 +9316,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "tryCall": false,
                           "type": "tuple()",
                           "type_conversion": false
@@ -9571,10 +9330,7 @@
                                   "typeString": "bool"
                                 }
                               ],
-                              "overloadedDeclarations": [
-                                -18,
-                                -18
-                              ],
+                              "overloadedDeclarations": [-18, -18],
                               "referencedDeclaration": -18,
                               "type": "function (bool) pure",
                               "value": "require"
@@ -9609,9 +9365,7 @@
                                 "children": [
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": -15,
                                       "type": "msg",
                                       "value": "msg"
@@ -9632,9 +9386,7 @@
                                   "isPure": true,
                                   "isStructConstructorCall": false,
                                   "lValueRequested": false,
-                                  "names": [
-                                    null
-                                  ],
+                                  "names": [null],
                                   "tryCall": false,
                                   "type": "address payable",
                                   "type_conversion": true
@@ -9724,9 +9476,7 @@
                               "isPure": false,
                               "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
+                              "names": [null],
                               "tryCall": false,
                               "type": "bool",
                               "type_conversion": false
@@ -9740,9 +9490,7 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 404,
                                   "type": "function (uint256) view returns (bool)",
                                   "value": "fileExist"
@@ -9753,9 +9501,7 @@
                               },
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 272,
                                   "type": "uint256",
                                   "value": "_fileId"
@@ -9783,9 +9529,7 @@
                               "isPure": false,
                               "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
+                              "names": [null],
                               "tryCall": false,
                               "type": "tuple()",
                               "type_conversion": false
@@ -9799,10 +9543,7 @@
                                       "typeString": "literal_string \"This file does not exist\""
                                     }
                                   ],
-                                  "overloadedDeclarations": [
-                                    -19,
-                                    -19
-                                  ],
+                                  "overloadedDeclarations": [-19, -19],
                                   "referencedDeclaration": -19,
                                   "type": "function (string memory) pure",
                                   "value": "revert"
@@ -9845,9 +9586,7 @@
                     "children": [
                       {
                         "attributes": {
-                          "assignments": [
-                            297
-                          ]
+                          "assignments": [297]
                         },
                         "children": [
                           {
@@ -9912,9 +9651,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 297,
                               "type": "uint256",
                               "value": "i"
@@ -9925,9 +9662,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 24,
                               "type": "uint256",
                               "value": "totalFileCount"
@@ -9956,9 +9691,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 297,
                                   "type": "uint256",
                                   "value": "i"
@@ -10018,9 +9751,7 @@
                                         "children": [
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 21,
                                               "type": "struct Storage.File storage ref[] storage ref",
                                               "value": "files"
@@ -10031,9 +9762,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 297,
                                               "type": "uint256",
                                               "value": "i"
@@ -10054,9 +9783,7 @@
                                   },
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 272,
                                       "type": "uint256",
                                       "value": "_fileId"
@@ -10187,9 +9914,7 @@
                                               "isPure": false,
                                               "isStructConstructorCall": false,
                                               "lValueRequested": false,
-                                              "names": [
-                                                null
-                                              ],
+                                              "names": [null],
                                               "tryCall": false,
                                               "type": "tuple()",
                                               "type_conversion": false
@@ -10204,8 +9929,7 @@
                                                     }
                                                   ],
                                                   "overloadedDeclarations": [
-                                                    -19,
-                                                    -19
+                                                    -19, -19
                                                   ],
                                                   "referencedDeclaration": -19,
                                                   "type": "function (string memory) pure",
@@ -10493,9 +10217,7 @@
                                         "children": [
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 24,
                                               "type": "uint256",
                                               "value": "totalFileCount"
@@ -10518,17 +10240,13 @@
                                     "children": [
                                       {
                                         "attributes": {
-                                          "arguments": [
-                                            null
-                                          ],
+                                          "arguments": [null],
                                           "isConstant": false,
                                           "isLValue": false,
                                           "isPure": false,
                                           "isStructConstructorCall": false,
                                           "lValueRequested": false,
-                                          "names": [
-                                            null
-                                          ],
+                                          "names": [null],
                                           "tryCall": false,
                                           "type": "tuple()",
                                           "type_conversion": false
@@ -10536,9 +10254,7 @@
                                         "children": [
                                           {
                                             "attributes": {
-                                              "argumentTypes": [
-                                                null
-                                              ],
+                                              "argumentTypes": [null],
                                               "isConstant": false,
                                               "isLValue": false,
                                               "isPure": false,
@@ -10584,9 +10300,7 @@
                                           "isPure": false,
                                           "isStructConstructorCall": false,
                                           "lValueRequested": false,
-                                          "names": [
-                                            null
-                                          ],
+                                          "names": [null],
                                           "tryCall": false,
                                           "type": "tuple()",
                                           "type_conversion": false
@@ -10608,9 +10322,7 @@
                                                   "typeString": "address payable"
                                                 }
                                               ],
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 53,
                                               "type": "function (uint256,uint256,address)",
                                               "value": "FileDeleted"
@@ -10621,9 +10333,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 272,
                                               "type": "uint256",
                                               "value": "_fileId"
@@ -10784,9 +10494,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "fileExist",
               "scope": 405,
               "stateMutability": "view",
@@ -10881,9 +10589,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 24,
                               "type": "uint256",
                               "value": "totalFileCount"
@@ -10946,9 +10652,7 @@
                     "children": [
                       {
                         "attributes": {
-                          "assignments": [
-                            380
-                          ]
+                          "assignments": [380]
                         },
                         "children": [
                           {
@@ -11013,9 +10717,7 @@
                         "children": [
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 380,
                               "type": "uint256",
                               "value": "i"
@@ -11026,9 +10728,7 @@
                           },
                           {
                             "attributes": {
-                              "overloadedDeclarations": [
-                                null
-                              ],
+                              "overloadedDeclarations": [null],
                               "referencedDeclaration": 24,
                               "type": "uint256",
                               "value": "totalFileCount"
@@ -11057,9 +10757,7 @@
                             "children": [
                               {
                                 "attributes": {
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 380,
                                   "type": "uint256",
                                   "value": "i"
@@ -11119,9 +10817,7 @@
                                         "children": [
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 21,
                                               "type": "struct Storage.File storage ref[] storage ref",
                                               "value": "files"
@@ -11132,9 +10828,7 @@
                                           },
                                           {
                                             "attributes": {
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
+                                              "overloadedDeclarations": [null],
                                               "referencedDeclaration": 380,
                                               "type": "uint256",
                                               "value": "i"
@@ -11155,9 +10849,7 @@
                                   },
                                   {
                                     "attributes": {
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
+                                      "overloadedDeclarations": [null],
                                       "referencedDeclaration": 368,
                                       "type": "uint256",
                                       "value": "_fileId"
@@ -11273,11 +10965,16 @@
       "links": {},
       "address": "0x7E5b805f760194B790ea4CeCE3d459460238811b",
       "transactionHash": "0xa85683be33baeba81beb80081f9bc02adba825c6eb978f32ecd0f650ad2d099d"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0x21a8a3b4024cA7FB912DAac94E559a7970BBB1CC",
+      "transactionHash": "0x70d2a83525a6994e5e42210b56d32540641fe0e7f90ad3b6233ae71df85a1bae"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-11-17T16:17:31.848Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-01-19T15:46:25.955Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

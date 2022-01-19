@@ -1,8 +1,9 @@
 require("babel-register");
 require("babel-polyfill");
 require("dotenv").config();
-const HDWalletProvider = require("truffle-hdwallet-provider-privkey");
-const privateKeys = process.env.PRIVATE_KEYS || "";
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const privateKeys = [process.env.PRIVATE_KEYS];
+const privateKeys1 = [process.env.PRIVATE_KEYS_1];
 
 module.exports = {
   networks: {
@@ -14,7 +15,7 @@ module.exports = {
     kovan: {
       provider: function () {
         return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
+          privateKeys, // Array of account private keys
           `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
         );
       },
@@ -25,7 +26,7 @@ module.exports = {
     main: {
       provider: function () {
         return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
+          privateKeys, // Array of account private keys
           `https://main.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
         );
       },
@@ -36,7 +37,7 @@ module.exports = {
     rinkeby: {
       provider: function () {
         return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
+          privateKeys, // Array of account private keys
           `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
         );
       },
@@ -47,13 +48,26 @@ module.exports = {
     ropsten: {
       provider: function () {
         return new HDWalletProvider(
-          privateKeys.split(","), // Array of account private keys
+          privateKeys, // Array of account private keys
           `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}` // Url to an Ethereum Node
         );
       },
       gas: 5000000,
       gasPrice: 5000000000, // 5 gwei
       network_id: 3,
+    },
+    mumbai: {
+      provider: () =>
+        new HDWalletProvider(
+          privateKeys1,
+          `https://polygon-mumbai.g.alchemy.com/v2/fWsg1C0F_kaTj0uCtOEeT8_-YhoaJqIz`
+        ),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gas: 6000000,
+      gasPrice: 10000000000,
     },
   },
   contracts_directory: "./src/contracts/",
