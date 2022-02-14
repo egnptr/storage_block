@@ -56,18 +56,18 @@ module.exports = {
       gasPrice: 5000000000, // 5 gwei
       network_id: 3,
     },
-    mumbai: {
+    matic: {
       provider: () =>
         new HDWalletProvider(
           privateKeys1,
-          `https://polygon-mumbai.g.alchemy.com/v2/fWsg1C0F_kaTj0uCtOEeT8_-YhoaJqIz`
+          `https://polygon-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`
         ),
-      network_id: 80001,
+      network_id: 137,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
       gas: 6000000,
-      gasPrice: 10000000000,
+      gasPrice: 10000000000, // 10 gwei
     },
   },
   contracts_directory: "./src/contracts/",
