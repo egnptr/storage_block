@@ -31,7 +31,7 @@ class Files extends Component {
         <div className="px-3 md:px-8 h-auto -mt-24">
           <div className="container mx-auto max-w-full">
             <div className="grid grid-cols-1 px-4 mb-16">
-              {!this.props.loading ? (
+              {!this.props.isLoading ? (
                 <Card>
                   <CardHeader color="green" contentPosition="left">
                     <h2 className="text-white text-2xl">List of Files</h2>
@@ -64,13 +64,13 @@ class Files extends Component {
                             return (
                               <tr key={key}>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                  {file.fileName}
+                                  {file.name}
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                  {file.fileDescription}
+                                  {file.description}
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                                  {this.convertBytes(file.fileSize)}
+                                  {this.convertBytes(file.size)}
                                 </th>
                                 <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                                   {moment
@@ -84,7 +84,7 @@ class Files extends Component {
                                   <a
                                     href={
                                       "https://ipfs.infura.io/ipfs/" +
-                                      file.fileHash
+                                      file.ipfsHash
                                     }
                                     className="mx-auto bg-green-400 text-white rounded-xl p-2"
                                   >
@@ -98,7 +98,7 @@ class Files extends Component {
                                       onClick={() =>
                                         this.setState({
                                           showModal: true,
-                                          selectedId: file.fileId,
+                                          selectedId: file.id,
                                         })
                                       }
                                     >
@@ -109,7 +109,7 @@ class Files extends Component {
                                     file.uploader.toLowerCase() && (
                                     <button
                                       onClick={(e) =>
-                                        this.props.deleteFile(file.fileId, e)
+                                        this.props.deleteFile(file.id, e)
                                       }
                                       className="bg-red-400 text-white rounded-xl p-2"
                                     >
