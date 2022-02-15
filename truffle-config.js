@@ -2,7 +2,7 @@ require("babel-register");
 require("babel-polyfill");
 require("dotenv").config();
 const HDWalletProvider = require("truffle-hdwallet-provider-privkey");
-const privateKeys = [process.env.PRIVATE_KEYS];
+const privateKeys = [process.env.PRIVATE_KEYS_1];
 
 module.exports = {
   networks: {
@@ -55,6 +55,34 @@ module.exports = {
       gasPrice: 15000000000, // 15 gwei
       network_id: 3,
       networkCheckTimeout: 100000,
+    },
+    testnet: {
+      provider: function () {
+        return new HDWalletProvider(
+          privateKeys, // Array of account private keys
+          `https://data-seed-prebsc-1-s1.binance.org:8545`
+        );
+      },
+      network_id: 97,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gas: 6000000,
+      gasPrice: 10000000000, // 10 gwei
+    },
+    bsc: {
+      provider: function () {
+        return new HDWalletProvider(
+          privateKeys, // Array of account private keys
+          `https://bsc-dataseed1.binance.org`
+        );
+      },
+      network_id: 56,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      gas: 6000000,
+      gasPrice: 10000000000, // 10 gwei
     },
   },
   contracts_directory: "./src/contracts/",
